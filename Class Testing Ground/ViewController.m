@@ -17,6 +17,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString *myString = @"Testing some String fun stuff";
+    
+    // each time there is a space it will return it
+    NSMutableArray *wordsInSentence = [[NSMutableArray alloc] initWithArray:[myString componentsSeparatedByString:@" "] ];
+    NSLog(@"%@", wordsInSentence);
+
+    // loop through each and capitalize each
+    for( int i = 0; i < [wordsInSentence count]; i++)
+        [wordsInSentence replaceObjectAtIndex:i withObject:[[wordsInSentence objectAtIndex:i] capitalizedString]];
+    
+    // print it out
+    NSLog(@"%@", wordsInSentence);
+    
 }
 
 - (void)didReceiveMemoryWarning {
